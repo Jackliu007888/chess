@@ -166,7 +166,9 @@ chess.onclick = function(e){
                 myWin[k]++;
                 computerWin[k] = 6;
                 if(myWin[k] == 5){
-                    window.alert("你们人类真厉害，我还要不断的学习！");
+                    setTimeout(function(){
+                        alert("你们人类真厉害，我还要不断的学习！")
+                    },200);
                     over = true;
                 }
             }
@@ -246,7 +248,9 @@ var computerAi = function(){
             computerWin[k]++;
             myWin[k] = 6;
             if(computerWin[k] == 5){
-                alert("你们人类真差劲！");
+               setTimeout(function(){
+                   alert("你们人类真差劲")
+               },200);
                 over = true;
             }
         }
@@ -258,9 +262,9 @@ var computerAi = function(){
 
 var btn = document.getElementById('btn');
 btn.onclick = function(){
-    me=true;
-    context.clearRect(0,0,canvasWidth,canvasHeight);
-
+    context.clearRect(0, 0, canvasWidth, canvasHeight);
+    context.beginPath();
+    context.closePath();
     newGame();
     drawChessBoard();
 };
