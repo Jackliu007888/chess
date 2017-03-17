@@ -267,4 +267,11 @@ btn.onclick = function(){
     context.closePath();
     newGame();
     drawChessBoard();
+    context.strokeStyle = "#BFBFBF";
+    var logo = new Image();
+    logo.src = "img/logo3.png";
+    logo.onload = function(){
+        context.drawImage(logo, 0, 0, canvasWidth, canvasWidth);
+        drawChessBoard();
+    };
 };
